@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head><title>DOO TP5</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  </head>
+  <body bgcolor="#3FBFAF" text="#4F2F1F">
+    <h2>DOO - Canevas du TP 5 : Encapsulation et composition forte</h2>
+    <b>Attendus :</b>
+    <dl>
+      <dd> - D&eacute;velopper une classe &agrave; partir d'un diagramme; </dd>
+      <dd> - Savoir implanter une composition forte; </dd>
+      <dd> - Savoir utiliser un paquetage; </dd>
+      <dd> - Savoir r&eacute;aliser un paquetage. </dd>
+    </dl>
+
+    <b>Organisation</b>
+    <dl>
+      <dd> - Travail en bin&ocirc;me (le m&ecirc;me qu'au TP
+           pr&eacute;c&eacute;dent); </dd>
+      <dd> - Les classes &agrave; r&eacute;aliser seront r&eacute;parties
+           entre les membres; </dd>
+      <dd> - Le paquetage <tt>faces.jar</tt> et sa documentation seront
+           compos&eacute;s de toutes les classes du bin&ocirc;me. </dd>
+      <dd> - chaque membre du bin&ocirc;me r&eacute;digera un compte-rendu
+           <u>individuel</u> sur la partie dont il a la charge;
+    </dl>
+
+    <b>A rendre en fin de TP :</b>
+    <dl>
+      <dt> D&eacute;poser sur Arche une archive ZIP (seul format
+          accept&eacute;), avec : </dt>
+      <dd> - le compte-rendu (PDF + DOC/ODT) <u>individuel</u>, </dd>
+      <dd> - les codes sources <u>r&eacute;alis&eacute;s</u> par le membre
+      <dd> - les codes sources <u>utilis&eacute;s</u> par le bin&ocirc;me
+           rang&eacute;s dans un r&eacute;pertoire <tt>lignes</tt>, </dd>
+      <dd> - les paquetages <tt>lignes.jar</tt> et <tt>faces.jar</tt> </dd>
+      <dd> - la documentation <b>compl&egrave;te</b> du paquetage
+           <tt>faces</tt> </dd>
+      <dd> - Rien d'autre. </dd>
+    </dl>
+
+    <b>Evaluation :</b>
+    <dl>
+      <dt> Sur la base : </dt>
+      <dd> - de la m&eacute;thodologie de d&eacute;veloppement
+           (&eacute;valu&eacute;e en-ligne), </dd>
+      <dd> - du compte-rendu, </dd>
+      <dd> - des d&eacute;veloppements remis. </dd>
+      <dt> P&eacute;nalit&eacute;s : </dt>
+      <dd> - rendu hors Arche, </dd>
+      <dd> - archive hors-format, incompl&egrave;te ou fouillis, </dd>
+      <dd> - probl&egrave;me de compilation ou d'interpr&eacute;tation
+           du code, </dd>
+      <dd> - similarit&eacute; avec un autre travail. </dd>
+    </dl>
+
+    <b>Rappel :</b>
+    <p> Tous les services de math ou de dessin doivent &ecirc;tre
+        demand&eacute;s au paquetage
+        <a href=doc/index.html><tt>geodessin</tt></a>. </pp>
+    <p> Les sources Java des classes de test devront &ecirc;tre fournis
+        en fin de TP, dans l'archive &agrave; rendre. </p>
+
+    <h4>Travail &agrave; r&eacute;aliser</h4>
+    <p> L'objectif est de r&eacute;aliser un nouveau paquetage
+        <tt>faces.jar</tt> compos&eacute; des nouvelles classes du diagramme
+        UML ci-dessous, en utilisant les services du paquetage
+        <tt>geodessin</tt> et du paquetage <tt>lignes</tt>
+        r&eacute;alis&eacute; au dernier TP. </p>
+    <p> <a href="uml/uml.pdf"><img src="uml/uml.png"></a> </p>
+
+    <h4>Recommandations g&eacute;n&eacute;rales :</h4>
+    <ul>
+      <dt> Veiller &agrave; bien respecter la syntaxe du diagramme UML
+          (intitul&eacute; des attributs et m&eacute;thodes, types de
+          composition, cardinalit&eacute;s). </dt>
+      <dt> Pour les <b>compositions fortes</b>, s'assurer qu'on ne puisse
+          jamais acc&eacute;der depuis l'ext&eacute;rieur de la classe aux
+          composants (faire des copies en entr&eacute;e et en sortie). </dt>
+      <dt> Penser &agrave; trouver un <b>constructeur principal</b>
+          pertinent pour chaque classe. </dt>
+      <dt> Pour la r&eacute;alisation des tests g&eacute;om&eacute;triques,
+          s'appuyer sur les services de la classe <tt>Geometre</tt>.
+          En particulier, cette classe utilise une valeur de granularit&eacute;
+          pour les comparaisons de valeurs r&eacute;elles. Pour r&eacute;aliser
+          des tests, une valeur de 0.01 est judicieuse. </dt>
+      <dt> Il faudra s'assurer que les conversions en cha&icirc;ne de
+          caract&egrave;res proposent un format bien adapt&eacute; &agrave;
+          une int&eacute;gration dans tout type de messages. </dt>
+    </ul>
+    <h4>Recommandations pour la classe Triangle :</h4>
+    <ul>
+      <dt> Le constructeur avec un tableau de points et trois entiers en
+          param&egrave;tres construit un triangle dont les sommets sont
+          les points du tableau index&eacute;s par les trois entiers. </dt>
+      <dt> Le test <tt>direct</tt> v&eacute;rifie si les sommets sont
+          sp&eacute;cifi&eacute;s dans le sens trigonom&eacute;trique direct
+          (inverse des aiguilles d'une montre vosgienne). </dt>
+      <dt> Le test <tt>passePar</tt> v&eacute;rifie si le point en
+          param&egrave;tre est sur le p&eacute;rim&egrave;tre du triangle. </dt>
+      <dt> Le test <tt>entoure</tt> v&eacute;rifie si le point en
+          param&egrave;tre est strictement &agrave; l'int&eacute;rieur du
+          triangle (p&eacute;rim&egrave;tre exclus); pour cela, il suffit de
+          v&eacute;rifier que le point est toujours du m&ecirc;me
+          c&ocirc;t&eacute; de chaque ar&ecirc;te. </dt>
+    </ul>
+    <h4>Quelques pr&eacute;cisions sur les polygones :</h4>
+    <ul>
+      <dt> Les polygones sont d&eacute;finis par une liste ordonn&eacute;e de
+          sommets. </dt>
+      <dt> On ne doit pas pouvoir construire de polygone auto-s&eacute;cant,
+          &agrave; savoir un polygone comportant des ar&ecirc;tes qui se
+          coupent (test pr&eacute;lable &agrave; toute construction). </dt>
+      <dt> Le p&eacute;rim&egrave;tre du polygone relie successivement
+          chaque sommet pris cons&eacute;cutivement dans la liste. </dt>
+      <dt> Les ar&ecirc;tes doivent &ecirc;tre list&eacute;es dans le
+          m&ecirc;me sens que les sommets, en respectant le sens de
+          parcours. </dt> <br>
+      <dt> Une diagonale du polygone est un segment reliant deux sommets sans
+          franchir le p&eacute;rim&egrave;tre du polygone et enti&egrave;rement
+          contenu &agrave; l'int&eacute;rieur du polygone. </dt>
+      <dt> Un polygone convexe est tel que l'angle entre deux ar&ecirc;tes
+          successives est toujours de m&ecirc;me signe. </dt>
+      <dt> L'enveloppe convexe est la forme d&eacute;finie par un
+          &eacute;lastique entourant le polygone. </dt>
+      <dt> La triangulation est une d&eacute;composition du polygone en
+          triangles sans recouvrement (l'intersection entre chaque triangle
+          est au mieux une ar&ecirc;te). </dt>
+    </ul>
+    <h4>Recommandations pour la classe Polygone :</h4>
+    <ul>
+      <dt> Le test <tt>direct</tt> v&eacute;rifie si les sommets sont
+          sp&eacute;cifi&eacute;s dans le sens trigonom&eacute;trique direct
+          (inverse des aiguilles d'une horloge normande). </dt>
+      <dt> Le test <tt>autos&eacute;cant</tt> v&eacute;rifie si le polygone
+          a des ar&ecirc;tes qui se croisent. </dt>
+      <dt> L'accesseur <tt>sousPolygone</tt> retourne une copie du polygone
+          dont on a retranch&eacute; un sommet (celui dont l'index est fourni
+          en param&egrave;tre). </dt> <br>
+      <dt> Pour le test <tt>entoure</tt>, si le polygone est convexe,
+          v&eacute;rifier que le point est toujours du m&ecirc;me
+          c&ocirc;t&eacute; de chaque ar&ecirc;te. <br>
+          Dans le cas d'un polygone non-convexe, on compte le nombre
+          d'intersections
+          entre une demi-droite issue du point fourni avec le
+          p&eacute;rim&egrave;tre, et on v&eacute;rifie que ce nombre est
+          impair. Attention, le cas des sommets situ&eacute;s sur la
+          demi-droite est d&eacute;licat &agrave; traiter. </dt> <br>
+      <dt> Pour la triangulation d'un polygone convexe, tourner autour de
+          n'importe quel sommet du polygone en formant des triangles avec ce
+          sommet et deux autres sommets cons&eacute;cutifs. <br>
+          Dans le cas d'un polygone non-convexe, on tourne autour du polygone
+          en testant chaque sommet. Si le segment reliant le sommet
+          pr&eacute;c&eacute;dent et le sommet suivant est une diagonale, on
+          a un triangle que l'on peut retrancher du polygone. Sinon, on passe
+          au sommet suivant. On proc&egrave;de de la sorte de sommet en sommet
+          jusqu'&agrave; ne plus avoir que trois sommets &agrave; traiter
+          (le dernier triangle). </dt>
+    </ul>
+  </body>
+</html>

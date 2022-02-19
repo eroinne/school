@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"Segment","l":"coupe(Segment)"},{"p":"<Unnamed>","c":"Segment","l":"inverse()"},{"p":"<Unnamed>","c":"Segment","l":"longueur()"},{"p":"<Unnamed>","c":"Segment","l":"millieux()"},{"p":"<Unnamed>","c":"Segment","l":"segement"},{"p":"<Unnamed>","c":"Segment","l":"Segment(Point[])","url":"%3Cinit%3E(Point[])"}]
