@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head><title>QD TP1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  </head>
+  <body bgcolor="#3FBFAF" text="#4F2F1F">
+    <h2>QD - Canevas du TP 1 : Vie et mort des instances</h2>
+    <b>Consignes g&eacute;n&eacute;rales :</b>
+    <dl>
+      <dd> - Interdiction d'utiliser un IDE ou un &eacute;diteur avec
+           compl&eacute;tion automatique dans le cadre des TP. </dd>
+      <dd> - Utiliser la commande <em>javac</em> dans un terminal pour
+           compiler les codes sources java. </dd>
+      <dd> - Utiliser la commande <em>java</em> pour interpr&eacute;ter
+           le code JVM (classes). </dd>
+    </dl>
+
+    <b>Attendus :</b>
+    <dl>
+      <dd> - Comprendre un code Java; </dd>
+      <dd> - Savoir compiler un fichier source; </dd>
+      <dd> - Savoir ex&eacute;cuter une classe; </dd>
+      <dd> - Lire les retours du compilateur et de l'interpr&eacute;teur; </dd>
+      <dd> - Deviner la nature de <tt>Infinity</tt> et <tt>NaN</tt>; </dd>
+      <dd> - D&eacute;couvrir le r&ocirc;le et les inconv&eacute;nients d'un
+             ramasse-miettes. </dd>
+    </dl>
+
+    <b>Rendu final :</b>
+    <dl>
+      <dd> - Uniquement le compte-rendu : une version PDF et une version
+           source (DOC ou ODT) dans une archive ZIP ou TGZ (seuls formats
+           accept&eacute;s). </dd>
+      <dd> - Rien d'autre. </dd>
+      <dd> - Remarque : un compte-rendu doit imp&eacute;rativement comporter
+             le nom et pr&eacute;nom de l'auteur, la formation suivie, le
+             num&eacute;ro de groupe TP, le nom de la mati&egrave;re, le
+             th&egrave;me du TP. Il doit aussi rappeler les attendus. </dd>
+    </dl>
+
+    <b>Evaluation :</b>
+    <dl>
+      <dd> Sur la base du compte-rendu. P&eacute;nalit&eacutes pour : </dt>
+      <dd> - les rendus hors Arche; v&eacute;rifier le bon fonctionnement
+           du d&eacute;p&ocirc;t d&egrave;s que possible. </dd>
+      <dd> - les rendus incomplets ou en exc&egrave;s, ou dans un format
+           d'acc&egrave;s compliqu&eacute; pour l'enseignant. </dd>
+    </dl>
+
+    <b>Exercice 1 : Compilation et ex&eacute;cution</b> (environ 1 heure)
+    <dl>
+      <dt> Le code du fichier <em>ProgrammeStupide.java</em> comporte onze
+           erreurs. </dt>
+      <dd> - Compiler ce programme : <em>javac "nom_du_fichier"</em>.
+           Consigner la commande correspondante dans l'&eacute;nonc&eacute;.
+           </dd>
+      <dd> - Corriger les erreurs &agrave; la compilation une par une dans
+             l'ordre dans lequel elles sont signal&eacute;es. Les reporter
+             dans le compte-rendu en indiquant pr&eacute;cis&eacute;ment la
+             nature de l'erreur (probl&egrave;me de syntaxe ?
+             initialisation ? conflit statique / non statique ? ...)
+             et la solution mise en place.
+             Pour r&eacute;gler les conflits de contextes statique / non
+             statique, privil&eacute;gier la solution la plus orient&eacute;e
+             objet.
+             </dd>
+      <dd> - Ex&eacute;cuter ce programme : <em>java "nom_de_la_classe"</em>.
+             Consigner la commande correspondante dans l'&eacute;nonc&eacute;.
+           </dd>
+      <dd> - Corriger les erreurs &agrave; l'ex&eacute;cution. S'assurer en
+             particulier que les tests fonctionnent. </dd>
+      <dd> - Expliquer dans le compte-rendu &agrave; quoi correspondent les
+             mots <tt>infinity</tt> et <tt>NaN</tt>. </dd>
+    </dl>
+
+    <b>Exercice 2 : Terminaison des objets</b> (environ 20 minutes)
+    <dl>
+      <dt> Avertissement : le comportement du programme peut d&eacute;pendre
+           du contexte d'ex&eacute;cution. En cas de soucis, utiliser un
+           ordinateur de la salle de TP. </dt>
+      <dt> Etudier le fichier <em>Terminator.java</em>.
+      <dd> - La m&eacute;thode <em>finalize</em> est appel&eacute;e au moment
+             o&ugrave; l'objet est d&eacute;truit par le ramasse-miettes de
+             Java. </dd>
+      <dd> - Quand on entre la valeur <em>1</em>,
+             on cr&eacute;e 10 terminators et 10 gros objets avec; comme ils
+             ne sont pas stock&eacute;s dans des variables, ils sont
+             imm&eacute;diatement &agrave; la merci du ramasse-miettes. </dd>
+      <dd> - Quand on entre la valeur <em>2</em>, on force la mise en route
+             du ramasse-miettes. </dd>
+      <dd> - Quand on entre la valeur <em>0</em>, on arr&ecirc;te le programme.
+             </dd>
+      <dt> Compiler et ex&eacute;cuter ce programme. </dt>
+      <dd> - Ne pas tenir compte du possible message de
+           d&eacute;pr&eacute;cation. </dd>
+      <dd> - Observer ce qui se passe quand on entre la valeur <em>1</em>
+             plusieurs fois de suite. </dd>
+      <dd> - Si rien ne se passe, augmenter la taille des gros objets en
+             relan&ccedil;ant le programme avec en argument un facteur
+             multiplicateur, par exemple : <tt>java Terminator 100</tt> </dd>
+      <dd> - Tester aussi l'effet de la touche <em>2</em>. </dd>
+      <dt> Consigner dans le compte-rendu : </dt>
+      <dd> - le fonctionnement du code et son objectif
+             (que met-il en &eacute;vidence ?), </dd>
+      <dd> - comment le non contr&ocirc;le du d&eacute;clenchement du
+             ramasse-miettes est mis en &eacute;vidence, </dd>
+      <dd> - comment le non contr&ocirc;le de l'ordre dans lequel les
+             objets sont d&eacute;truits est mis en &eacute;vidence. </dd>
+    </dl>
+  </body>
+</html>

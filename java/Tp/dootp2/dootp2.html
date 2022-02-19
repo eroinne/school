@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head><title>DOO TP2</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  </head>
+  <body bgcolor="#3FBFAF" text="#4F2F1F">
+    <h2>DOO - Canevas du TP 2 :
+        R&eacute;alisation d'un type encapsul&eacute;</h2>
+    <b>Avertissement :</b>
+    <p> La classe d&eacute;velopp&eacute;e dans ce TP sera utilis&eacute;e
+        dans le TP suivant. Si le TP est inachev&eacute;, il faudra le
+        terminer pour la prochaine s&eacute;ance. </p>
+
+    <b>Attendus :</b>
+    <dl>
+      <dd> - D&eacute;velopper une classe &agrave; partir de
+           sp&eacute;cifications; </dd>
+      <dd> - Encapsuler correctement une classe simple; </dd>
+      <dd> - Savoir la commenter et la tester <b>au fur et &agrave; mesure</b>
+           du d&eacute;veloppement de chaque m&eacute;thode</b>; </dd>
+    </dl>
+
+    <b>A rendre en fin de TP :</b>
+    <dl>
+      <dt> D&eacute;poser sur Arche une archive ZIP (seul format
+           accept&eacute;), contenant : </p>
+      <dd> - le compte-rendu (PDF + DOC/ODT), </dd>
+      <dd> - les codes sources <u>r&eacute;alis&eacute;s</u>
+           (<tt>Angle.java</tt> et <tt>TestAngle.java</tt>), </dd>
+      <dd> - la documentation HTML <b>compl&egrave;te</b> de la classe
+           <tt>Angle</tt>. </dd>
+      <dd> - Rien d'autre (pas les fichiers <tt>.class</tt>,
+             ni l'&eacute;nonc&eacute). </dd>
+    </dl>
+    <p> NB : un compte-rendu doit aussi illustrer les notions
+        du cours mises en oeuvre au travers d'exemples tir&eacute;s du
+        code r&eacute;alis&eacute; par contre, il ne doit pas comporter
+        de portions compl&egrave;tes du code sans commentaire, et surtout
+        <b> pas de copies d'&eacute;cran </b> (p&eacute;nalit&eacute;s). </p>
+
+    <b>Evaluation :</b>
+    <dl>
+      <dt> Sur la base : </dt>
+      <dd> - de la m&eacute;thodologie de d&eacute;veloppement
+           (&eacute;valu&eacute;e en-ligne), </dd>
+      <dd> - du compte-rendu, </dd>
+      <dd> - des codes remis. </dd>
+      <dt> P&eacute;nalit&eacute;s : </dt>
+      <dd> - rendu hors Arche, </dd>
+      <dd> - archive hors-format, incompl&egrave;te ou fouillis, </dd>
+      <dd> - probl&egrave;me de compilation ou d'interpr&eacute;tation
+           du code, </dd>
+      <dd> - similarit&eacute; avec un autre travail. </dd>
+    </dl>
+
+    <b>Recommandations :</b>
+    <dl>
+      <dd> - Attention &agrave; bien respecter les noms impos&eacute;s par
+           l'&eacute;nonc&eacute;, sinon les tests men&eacute;s par
+           l'enseignant ne seront pas concluants. </dd>
+      <dd> - Les fichiers rendus doivent pouvoir &ecirc;tre compil&eacute;s sans
+           erreur (commenter les parties de code d&eacute;fectueuses en cas de
+           doute). </dd>
+    </dl>
+<!--
+    <dl>
+      <dt> Le compte-rendu devrait au moins : </dt>
+      <dd> - indiquer le th&egrave;me principal du TP, </dd>
+      <dd> - rappeler les notions de type, d'espace de valeurs
+        (composition, r&eacute;duction) et d'op&eacute;ration,
+        illustr&eacute;es sur des exemples du TP, </dd>
+      <dd> - rappeler la notion de surchage, illustr&eacute;e sur un
+        exemple du TP, </dd>
+      <dd> - rappeler la notion de constructeur principal, illustr&eacute;e
+        sur les exemples du TP,</dd>
+      <dd> - justifier les choix des types retourn&eacute;s ou toute autre
+          particularit&eacute; pertinente du d&eacute;veloppement. </dd>
+    </dl>
+-->
+
+    <b>Sujet :</b>
+    <p> R&eacute;aliser, <b>tester</b> et <b>documenter</b>
+       (<em>javadoc + en-t&ecirc;te</em>) un type <em>Angle</em>,
+       correctement encapsul&eacute;, &agrave; valeurs sur ]-&pi;, &pi;]. </p>
+    <p> L'espace des valeurs du type doit &ecirc;tre bien
+       contr&ocirc;l&eacute;. </p>
+    <dl>
+       <dt><li>Constructeurs :</li></dt>
+       <dd>- un constructeur <b>principal</b> &agrave; partir d'une valeur
+           r&eacute;elle (en radians), </dd>
+       <dd>- un constructeur &agrave; partir d'une valeur enti&egrave;re
+           (en degr&eacute;s), </dd>
+       <dd>- une red&eacute;finition du constructeur par d&eacute;faut
+           retournant un angle droit, </dd>
+    </dl>
+    <dl>
+       <dt><li>Accesseurs :</li></dt>
+       <dd>- une m&eacute;thode de conversion en cha&icirc;ne de
+           caract&egrave;res, </dd>
+       <dd>- une m&eacute;thode <em>radians</em> qui retourne la valeur de
+           l'angle en radians, </dd>
+       <dd>- une m&eacute;thode <em>degres</em> qui retourne la valeur
+           arrondie &agrave; l'unit&eacute; la plus proche de l'angle en
+           degr&eacute;s, et telle que le r&eacute;sultat du test suivant 
+           soit satisfait : <br>
+           <tt>(new Angle ((new Angle (21)).degres ())).degres ()
+               == (new Angle (21)).degres ()</tt> <br>
+           <b>Attention</b> : le choix du type de retour devra &ecirc;tre
+           justifi&eacute; dans le compte-rendu. </dd>
+           </dd>
+       <dd>- une m&eacute;thode <em>somme</em> qui retourne la somme
+           avec un autre angle, </dd>
+       <dd>- une m&eacute;thode <em>oppose</em> qui retourne l'oppos&eacute;
+           de l'angle sur le cercle trigonom&eacute;trique (l'oppos&eacute;
+           de &pi;/4 est -3&pi;/4). </dd>
+    </dl>
+    <dl>
+       <dt><li>Mutateurs :</li></dt>
+       <dd>- une m&eacute;thode <em>ajouter</em> qui ajoute la valeur d'un
+           autre angle, </dd>
+       <dd>- une m&eacute;thode <em>inverser</em> qui remplace l'angle par
+           son inverse (l'inverse de &pi;/4 est -&pi;/4). </dd>
+       <dd> NB : ces mutateurs ne doivent pas utiliser les constructeurs. </dd>
+    </dl>
+  </body>
+</html>
